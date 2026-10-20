@@ -1,0 +1,79 @@
+{
+  "source_sha": "71b54b57b79f449f0a75fdd000896cadb2fcbe10",
+  "ci_run": 39070521923,
+  "ci_job": 117506984690,
+  "ci_success": true,
+  "bundle_artifact": 12115271570,
+  "tests_artifact": 12115246777,
+  "bundle_zip_sha256": "e14f0b64217e578fdeff6a34cf197cdec9aca6bb8bfea7aee0fb2ac5b4022b9a",
+  "tests_zip_sha256": "6a04a98df25fae9045868b62081474e266b740115d007121d56ec602b0bc24d1",
+  "tests": {
+    "patch": {
+      "tests": 88,
+      "failures": 0,
+      "skipped": 0
+    },
+    "extension": {
+      "tests": 279,
+      "failures": 0,
+      "skipped": 0
+    }
+  },
+  "mpp": {
+    "name": "patches-3.10.0-custom-newx.11.mpp",
+    "bytes": 9155045,
+    "sha256": "e28f827d6726f367f2632d6ee3d5326462ddb973d4520d555ef0d645b1c4ac7b"
+  },
+  "extensions": [
+    {
+      "name": "extensions/newx.mpe",
+      "bytes": 569488,
+      "sha256": "6f05f37111ae56324f28d9b61cd01fab7aa69e11c619499e520e38d5d532f8be"
+    },
+    {
+      "name": "extensions/shared.mpe",
+      "bytes": 3371684,
+      "sha256": "ad486f4bf4537b12e4d0efaff8b809cf550d6f9eea4bff4549d481a9da105396"
+    }
+  ],
+  "apks": {
+    "all": {
+      "bytes": 121351354,
+      "sha256": "03aec3683c94b90ec914e3b102bfcda791572fd7b320472f8f7de1337fb41cd6",
+      "applied_patches": 59,
+      "failed_patches": 0,
+      "rebuilt": true,
+      "reviews": {
+        "banner": 220,
+        "fixed": 38,
+        "glass": 33,
+        "bulk": 30
+      },
+      "total_checks": 321,
+      "chinese_strings": 621
+    },
+    "default": {
+      "bytes": 120466155,
+      "sha256": "13439f80129b7f221d574ac53b2070c33fdf9cccf0515d01b897ecc7302dfb7c",
+      "applied_patches": 53,
+      "failed_patches": 0,
+      "rebuilt": true,
+      "reviews": {
+        "banner": 220,
+        "fixed": 38,
+        "glass": 33,
+        "bulk": 30
+      },
+      "total_checks": 321,
+      "chinese_strings": 621
+    }
+  },
+  "release": {
+    "tag": "v3.10.0-custom-newx.11",
+    "release_id": 416071993,
+    "publisher_commit": "42f186ae4bfcf71b0b6e904ffbc673b75679a090",
+    "publisher_run": 39071002307,
+    "published_at": "2026-10-17T21:27:26Z",
+    "public_bundle_reverified": true
+  }
+}

@@ -1,0 +1,744 @@
+{
+  "source_sha": "65e447e1c7a93fd6b67c364568b31f347bfc157d",
+  "version": "3.10.0-custom-newx.18",
+  "bundle": "patches-3.10.0-custom-newx.18.mpp",
+  "sha256": "f1c49aa398b784b3c8485b9ab6b7fc06bbeb441c58b7bc4ad7e48780b06f623f",
+  "build_run_id": 39225112302,
+  "build_url": "https://github.com/YongkeDet/piko/actions/runs/39225112302",
+  "build_artifact_id": 12173174071,
+  "test_artifact_id": 12173921353,
+  "package": "com.twitter.android",
+  "target_version": "12.35.0-prod.01",
+  "version_code": 312350001,
+  "architecture": "arm64-v8a",
+  "patch_runtime_min_sdk": 29,
+  "input_apkm_sha256": "16607ce5e435eccb23b8b8385cbd173e672ff06f533f159e7acf2412087d6f3b",
+  "input_base_sha256": "c6d61ece0141104fd09c7c345ad139a010061c94c2e052e8a3299c9814a06817",
+  "tests": {
+    "extensions": {
+      "tests": 279,
+      "failures": 0,
+      "skipped": 0
+    },
+    "patches": {
+      "tests": 98,
+      "failures": 0,
+      "skipped": 0
+    }
+  },
+  "resolver_lint": "passed",
+  "extension_descriptors": "passed",
+  "hevc_experiment_removed": true,
+  "highest_resolution_preserved": true,
+  "patches": [
+    {
+      "target": "1235-all",
+      "applied": 59,
+      "failed": 0,
+      "rebuilt": true,
+      "architectures": [
+        "arm64-v8a"
+      ],
+      "apk": "work/03-修补日志与验证/validation-x1235/65e447e1c7a9-1235-all.apk",
+      "apk_sha256": "9d5b7d7b01346e751558bab5d02d80f03751f5fd8135f81ff921862a4b64d47f",
+      "applied_patches": [
+        {
+          "name": "NewX: Browse tweet object"
+        },
+        {
+          "name": "NewX: Classic inline action spacing"
+        },
+        {
+          "name": "NewX: Clone",
+          "options": [
+            {
+              "key": "packageName",
+              "value": "com.twitter.android.piko"
+            },
+            {
+              "key": "appName",
+              "value": "X Piko"
+            }
+          ]
+        },
+        {
+          "name": "NewX: Crash logs"
+        },
+        {
+          "name": "NewX: Custom font"
+        },
+        {
+          "name": "NewX: Custom sharing domain"
+        },
+        {
+          "name": "NewX: Customize drawer items"
+        },
+        {
+          "name": "NewX: Customize inline actions"
+        },
+        {
+          "name": "NewX: Customize media menu items"
+        },
+        {
+          "name": "NewX: Customize navigation bar"
+        },
+        {
+          "name": "NewX: Customize post menu items"
+        },
+        {
+          "name": "NewX: Customize profile tabs"
+        },
+        {
+          "name": "NewX: Customize timeline tabs"
+        },
+        {
+          "name": "NewX: Disable automatic content refresh"
+        },
+        {
+          "name": "NewX: Disable automatic timeline refresh"
+        },
+        {
+          "name": "NewX: Disable blur effects"
+        },
+        {
+          "name": "NewX: Disable video player scrolling"
+        },
+        {
+          "name": "NewX: Download all profile media"
+        },
+        {
+          "name": "NewX: Feature switch overrides"
+        },
+        {
+          "name": "NewX: Filter For You by topic"
+        },
+        {
+          "name": "NewX: Filter posts by keyword"
+        },
+        {
+          "name": "NewX: Fixed bottom navigation bar"
+        },
+        {
+          "name": "NewX: Floating glass navigation bar"
+        },
+        {
+          "name": "NewX: Force highest video resolution"
+        },
+        {
+          "name": "NewX: Force translate option"
+        },
+        {
+          "name": "NewX: Gallery profile Photos tab"
+        },
+        {
+          "name": "NewX: Handle custom links",
+          "options": [
+            {
+              "key": "customLinkHosts",
+              "value": [
+                "vxtwitter.com",
+                "fixvx.com",
+                "fxtwitter.com",
+                "fixupx.com",
+                "twittpr.com",
+                "xcancel.com"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "NewX: Hide AI-generated posts"
+        },
+        {
+          "name": "NewX: Hide Community Notes"
+        },
+        {
+          "name": "NewX: Hide Discover more"
+        },
+        {
+          "name": "NewX: Hide Spaces bar"
+        },
+        {
+          "name": "NewX: Hide compose button"
+        },
+        {
+          "name": "NewX: Hide new posts pill"
+        },
+        {
+          "name": "NewX: Hide post dividers"
+        },
+        {
+          "name": "NewX: Hide post reply bar"
+        },
+        {
+          "name": "NewX: Hide posts by verified account type"
+        },
+        {
+          "name": "NewX: Hide premium upsell"
+        },
+        {
+          "name": "NewX: Hide promote button"
+        },
+        {
+          "name": "NewX: Hide timeline tabs bar"
+        },
+        {
+          "name": "NewX: Hide who to follow"
+        },
+        {
+          "name": "NewX: Inline download button"
+        },
+        {
+          "name": "NewX: Open canonical URLs"
+        },
+        {
+          "name": "NewX: Redirect downloads to chosen folder"
+        },
+        {
+          "name": "NewX: Remove ads"
+        },
+        {
+          "name": "NewX: Restore Twitter branding"
+        },
+        {
+          "name": "NewX: Restore pinned home tab"
+        },
+        {
+          "name": "NewX: Restore timeline position"
+        },
+        {
+          "name": "NewX: Server error logging"
+        },
+        {
+          "name": "NewX: Set default media tab"
+        },
+        {
+          "name": "NewX: Set default profile post sorting"
+        },
+        {
+          "name": "NewX: Set default reply sorting"
+        },
+        {
+          "name": "NewX: Share post as image"
+        },
+        {
+          "name": "NewX: Show changelog"
+        },
+        {
+          "name": "NewX: Show poll results"
+        },
+        {
+          "name": "NewX: Show sensitive media"
+        },
+        {
+          "name": "NewX: Theme"
+        },
+        {
+          "name": "NewX: Unified download notifications"
+        },
+        {
+          "name": "NewX: Unlock color customization"
+        },
+        {
+          "name": "NewX: Unlock downloads"
+        }
+      ],
+      "audits": [
+        {
+          "file": "65e447e1-1235-all-static.json",
+          "checks": 220,
+          "passed": true
+        },
+        {
+          "file": "65e447e1-1235-all-glass.json",
+          "checks": 33,
+          "passed": true
+        },
+        {
+          "file": "65e447e1-1235-all-fixed-refresh.json",
+          "checks": 38,
+          "passed": true
+        }
+      ],
+      "verifier": {
+        "apk": "65e447e1c7a9-1235-all.apk",
+        "classes": 123359,
+        "methods": 594029,
+        "branches": 1517010,
+        "result_instructions": 1496093,
+        "issues": [],
+        "passed": true
+      }
+    },
+    {
+      "target": "1235-default",
+      "applied": 53,
+      "failed": 0,
+      "rebuilt": true,
+      "architectures": [
+        "arm64-v8a"
+      ],
+      "apk": "work/03-修补日志与验证/validation-x1235/65e447e1c7a9-1235-default.apk",
+      "apk_sha256": "63e63b80844ce8cacbf2d61076df9484434734c3cca485ecd93fbdf1fa18972d",
+      "applied_patches": [
+        {
+          "name": "NewX: Classic inline action spacing"
+        },
+        {
+          "name": "NewX: Crash logs"
+        },
+        {
+          "name": "NewX: Custom font"
+        },
+        {
+          "name": "NewX: Custom sharing domain"
+        },
+        {
+          "name": "NewX: Customize drawer items"
+        },
+        {
+          "name": "NewX: Customize inline actions"
+        },
+        {
+          "name": "NewX: Customize media menu items"
+        },
+        {
+          "name": "NewX: Customize navigation bar"
+        },
+        {
+          "name": "NewX: Customize post menu items"
+        },
+        {
+          "name": "NewX: Customize profile tabs"
+        },
+        {
+          "name": "NewX: Customize timeline tabs"
+        },
+        {
+          "name": "NewX: Disable automatic content refresh"
+        },
+        {
+          "name": "NewX: Disable automatic timeline refresh"
+        },
+        {
+          "name": "NewX: Disable blur effects"
+        },
+        {
+          "name": "NewX: Disable video player scrolling"
+        },
+        {
+          "name": "NewX: Download all profile media"
+        },
+        {
+          "name": "NewX: Feature switch overrides"
+        },
+        {
+          "name": "NewX: Filter For You by topic"
+        },
+        {
+          "name": "NewX: Filter posts by keyword"
+        },
+        {
+          "name": "NewX: Fixed bottom navigation bar"
+        },
+        {
+          "name": "NewX: Floating glass navigation bar"
+        },
+        {
+          "name": "NewX: Force highest video resolution"
+        },
+        {
+          "name": "NewX: Force translate option"
+        },
+        {
+          "name": "NewX: Gallery profile Photos tab"
+        },
+        {
+          "name": "NewX: Handle custom links",
+          "options": [
+            {
+              "key": "customLinkHosts",
+              "value": [
+                "vxtwitter.com",
+                "fixvx.com",
+                "fxtwitter.com",
+                "fixupx.com",
+                "twittpr.com",
+                "xcancel.com"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "NewX: Hide AI-generated posts"
+        },
+        {
+          "name": "NewX: Hide Community Notes"
+        },
+        {
+          "name": "NewX: Hide Discover more"
+        },
+        {
+          "name": "NewX: Hide Spaces bar"
+        },
+        {
+          "name": "NewX: Hide compose button"
+        },
+        {
+          "name": "NewX: Hide new posts pill"
+        },
+        {
+          "name": "NewX: Hide post reply bar"
+        },
+        {
+          "name": "NewX: Hide posts by verified account type"
+        },
+        {
+          "name": "NewX: Hide premium upsell"
+        },
+        {
+          "name": "NewX: Hide promote button"
+        },
+        {
+          "name": "NewX: Hide timeline tabs bar"
+        },
+        {
+          "name": "NewX: Hide who to follow"
+        },
+        {
+          "name": "NewX: Inline download button"
+        },
+        {
+          "name": "NewX: Open canonical URLs"
+        },
+        {
+          "name": "NewX: Redirect downloads to chosen folder"
+        },
+        {
+          "name": "NewX: Remove ads"
+        },
+        {
+          "name": "NewX: Restore pinned home tab"
+        },
+        {
+          "name": "NewX: Restore timeline position"
+        },
+        {
+          "name": "NewX: Set default media tab"
+        },
+        {
+          "name": "NewX: Set default profile post sorting"
+        },
+        {
+          "name": "NewX: Set default reply sorting"
+        },
+        {
+          "name": "NewX: Show changelog"
+        },
+        {
+          "name": "NewX: Show poll results"
+        },
+        {
+          "name": "NewX: Show sensitive media"
+        },
+        {
+          "name": "NewX: Theme"
+        },
+        {
+          "name": "NewX: Unified download notifications"
+        },
+        {
+          "name": "NewX: Unlock color customization"
+        },
+        {
+          "name": "NewX: Unlock downloads"
+        }
+      ],
+      "audits": [
+        {
+          "file": "65e447e1-1235-default-FullBannerStaticReview.json",
+          "checks": 220,
+          "passed": true
+        },
+        {
+          "file": "65e447e1-1235-default-GlassNavStaticReview.json",
+          "checks": 33,
+          "passed": true
+        },
+        {
+          "file": "65e447e1-1235-default-FixedRefreshStaticReview.json",
+          "checks": 38,
+          "passed": true
+        }
+      ],
+      "verifier": {
+        "apk": "65e447e1c7a9-1235-default.apk",
+        "classes": 123359,
+        "methods": 594029,
+        "branches": 1517002,
+        "result_instructions": 1496078,
+        "issues": [],
+        "passed": true
+      }
+    },
+    {
+      "target": "1234-all",
+      "applied": 59,
+      "failed": 0,
+      "rebuilt": true,
+      "architectures": [
+        "arm64-v8a"
+      ],
+      "apk": "work/03-修补日志与验证/validation-x1235/65e447e1c7a9-1234-all.apk",
+      "apk_sha256": "d6c66a28bdb397ca8f8202c280c52df56697aa131df6115e1a1f9ae90567747b",
+      "applied_patches": [
+        {
+          "name": "NewX: Browse tweet object"
+        },
+        {
+          "name": "NewX: Classic inline action spacing"
+        },
+        {
+          "name": "NewX: Clone",
+          "options": [
+            {
+              "key": "packageName",
+              "value": "com.twitter.android.piko"
+            },
+            {
+              "key": "appName",
+              "value": "X Piko"
+            }
+          ]
+        },
+        {
+          "name": "NewX: Crash logs"
+        },
+        {
+          "name": "NewX: Custom font"
+        },
+        {
+          "name": "NewX: Custom sharing domain"
+        },
+        {
+          "name": "NewX: Customize drawer items"
+        },
+        {
+          "name": "NewX: Customize inline actions"
+        },
+        {
+          "name": "NewX: Customize media menu items"
+        },
+        {
+          "name": "NewX: Customize navigation bar"
+        },
+        {
+          "name": "NewX: Customize post menu items"
+        },
+        {
+          "name": "NewX: Customize profile tabs"
+        },
+        {
+          "name": "NewX: Customize timeline tabs"
+        },
+        {
+          "name": "NewX: Disable automatic content refresh"
+        },
+        {
+          "name": "NewX: Disable automatic timeline refresh"
+        },
+        {
+          "name": "NewX: Disable blur effects"
+        },
+        {
+          "name": "NewX: Disable video player scrolling"
+        },
+        {
+          "name": "NewX: Download all profile media"
+        },
+        {
+          "name": "NewX: Feature switch overrides"
+        },
+        {
+          "name": "NewX: Filter For You by topic"
+        },
+        {
+          "name": "NewX: Filter posts by keyword"
+        },
+        {
+          "name": "NewX: Fixed bottom navigation bar"
+        },
+        {
+          "name": "NewX: Floating glass navigation bar"
+        },
+        {
+          "name": "NewX: Force highest video resolution"
+        },
+        {
+          "name": "NewX: Force translate option"
+        },
+        {
+          "name": "NewX: Gallery profile Photos tab"
+        },
+        {
+          "name": "NewX: Handle custom links",
+          "options": [
+            {
+              "key": "customLinkHosts",
+              "value": [
+                "vxtwitter.com",
+                "fixvx.com",
+                "fxtwitter.com",
+                "fixupx.com",
+                "twittpr.com",
+                "xcancel.com"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "NewX: Hide AI-generated posts"
+        },
+        {
+          "name": "NewX: Hide Community Notes"
+        },
+        {
+          "name": "NewX: Hide Discover more"
+        },
+        {
+          "name": "NewX: Hide Spaces bar"
+        },
+        {
+          "name": "NewX: Hide compose button"
+        },
+        {
+          "name": "NewX: Hide new posts pill"
+        },
+        {
+          "name": "NewX: Hide post dividers"
+        },
+        {
+          "name": "NewX: Hide post reply bar"
+        },
+        {
+          "name": "NewX: Hide posts by verified account type"
+        },
+        {
+          "name": "NewX: Hide premium upsell"
+        },
+        {
+          "name": "NewX: Hide promote button"
+        },
+        {
+          "name": "NewX: Hide timeline tabs bar"
+        },
+        {
+          "name": "NewX: Hide who to follow"
+        },
+        {
+          "name": "NewX: Inline download button"
+        },
+        {
+          "name": "NewX: Open canonical URLs"
+        },
+        {
+          "name": "NewX: Redirect downloads to chosen folder"
+        },
+        {
+          "name": "NewX: Remove ads"
+        },
+        {
+          "name": "NewX: Restore Twitter branding"
+        },
+        {
+          "name": "NewX: Restore pinned home tab"
+        },
+        {
+          "name": "NewX: Restore timeline position"
+        },
+        {
+          "name": "NewX: Server error logging"
+        },
+        {
+          "name": "NewX: Set default media tab"
+        },
+        {
+          "name": "NewX: Set default profile post sorting"
+        },
+        {
+          "name": "NewX: Set default reply sorting"
+        },
+        {
+          "name": "NewX: Share post as image"
+        },
+        {
+          "name": "NewX: Show changelog"
+        },
+        {
+          "name": "NewX: Show poll results"
+        },
+        {
+          "name": "NewX: Show sensitive media"
+        },
+        {
+          "name": "NewX: Theme"
+        },
+        {
+          "name": "NewX: Unified download notifications"
+        },
+        {
+          "name": "NewX: Unlock color customization"
+        },
+        {
+          "name": "NewX: Unlock downloads"
+        }
+      ],
+      "audits": [
+        {
+          "file": "65e447e1-1234-all-FullBannerStaticReview.json",
+          "checks": 220,
+          "passed": true
+        },
+        {
+          "file": "65e447e1-1234-all-GlassNavStaticReview.json",
+          "checks": 33,
+          "passed": true
+        },
+        {
+          "file": "65e447e1-1234-all-FixedRefreshStaticReview.json",
+          "checks": 38,
+          "passed": true
+        }
+      ],
+      "verifier": {
+        "apk": "65e447e1c7a9-1234-all.apk",
+        "classes": 120998,
+        "methods": 584875,
+        "branches": 1597389,
+        "result_instructions": 1474821,
+        "issues": [],
+        "passed": true
+      }
+    }
+  ],
+  "upgrade_guard_audits": [
+    {
+      "target": "1235",
+      "file": "65e447e1-1235-upgrade-guards.json",
+      "checks": 17,
+      "passed": true
+    },
+    {
+      "target": "1234",
+      "file": "65e447e1-1234-upgrade-guards.json",
+      "checks": 17,
+      "passed": true
+    }
+  ],
+  "device_validation": "Not installed or exercised on a phone. Offline patch/rebuild and static control-flow checks only.",
+  "prior_failed_candidates": [
+    "9176521a222a2f09714abc292f58fea89fc3590b",
+    "41082a2d8781a67e77b064f5858cc5113525de38"
+  ],
+  "unit_regression_fix": "019b7b0b CI caught two legacy module-wrapper failures; 65e447e1 normalizes dexlib CharSequence descriptors and passes all fixtures."
+}

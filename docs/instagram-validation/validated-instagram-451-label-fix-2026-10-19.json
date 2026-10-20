@@ -1,0 +1,55 @@
+{
+  "status": "Restored pre-.15 resource lookup; host-remapping regression, CI tests, 451 patch/rebuild and final APK audits passed. Actual phone labels await user verification.",
+  "source_commit": "e00bbba9b36c139a21fc87b5461fa75ad336ffa2",
+  "source_tree": "d228364ffc52a15b9c408d5ee8c3226cf6438fd1",
+  "ci": {
+    "run": 39191895272,
+    "job": 117866322943,
+    "conclusion": "success",
+    "bundle_artifact": 12159954667,
+    "test_artifact": 12160024455
+  },
+  "tests": {
+    "instagram_extension": 6,
+    "newx_extension": 279,
+    "patches": 92,
+    "total": 377,
+    "failures": 0,
+    "skipped": 0
+  },
+  "bundle": {
+    "file": "patches-3.10.0-custom-newx.16.mpp",
+    "bytes": 10729537,
+    "sha256": "1819d60d34f5ac6ca655a62b09c79102283280ff1925693b7f4b21f302409cbd"
+  },
+  "target": "combined",
+  "context_regression": {
+    "fixture": "check-ig-string-context.py",
+    "label_bindings": 443,
+    "old_15_mismatches": 443,
+    "restored_reader_mismatches": 0,
+    "scope": "Real IgStr compiled against minimal host-language resource wrappers; not a full Android/device emulation."
+  },
+  "instagram": {
+    "version": "451.0.0.53.80",
+    "version_code": 385713073,
+    "architecture": "arm64-v8a",
+    "applied_patches": 60,
+    "failed_patches": [],
+    "signed": false,
+    "static_checks": 706,
+    "static_report": "instagram-451-label-fix-static.json",
+    "verifier_report": "instagram-451-label-fix-verifier.json"
+  },
+  "changes": [
+    "Restore the .14 unwrapped application context lookup; bypass the host downloaded-language string table.",
+    "Keep the .15 native download component immediately before bookmark/save and preserve its media, index, session and row-context bindings.",
+    "Keep all 443 Chinese string entries and Android scoped-storage crash reporting."
+  ],
+  "limits": [
+    "Only Instagram 451 was patched; X and 439 were not repatched.",
+    "No device installation, launch or control was performed.",
+    "Actual phone label correctness still requires user verification.",
+    "The earlier first language-switch exit remains undiagnosed; this release does not claim to fix it."
+  ]
+}

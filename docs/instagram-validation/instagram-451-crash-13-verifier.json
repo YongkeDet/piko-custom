@@ -1,0 +1,11 @@
+{
+  "apk": "fff-default.apk",
+  "classes": 213655,
+  "methods": 831824,
+  "branches": 2746435,
+  "result_instructions": 3113626,
+  "issues": [
+    "LX/04a3;->unsafeParseFromJson(LX/04s3;)Ljava/lang/Object; @146: branch targets MOVE_RESULT_OBJECT @14b"
+  ],
+  "passed": false
+}

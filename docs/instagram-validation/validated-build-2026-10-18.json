@@ -1,0 +1,135 @@
+{
+  "status": "Validated locally; not released or merged into main. Device runtime not tested.",
+  "source_commit": "ed0f62402d2ea92592d67e17077708ef2348aa8f",
+  "source_tree": "3e1398096fcb83582491828f108d3978aebb215a",
+  "ci": {
+    "run": 39089892830,
+    "job": 117564206156,
+    "conclusion": "success",
+    "artifact_bundle": 12121819706,
+    "artifact_tests": 12122621318
+  },
+  "tests": {
+    "patches": 88,
+    "newx_extension": 279,
+    "instagram_extension": 5,
+    "failures": 0,
+    "skipped": 0
+  },
+  "package_targets": {
+    "com.instagram.android": {
+      "version": "439.0.0.37.89",
+      "version_code": 384510827,
+      "arch": "arm64-v8a"
+    },
+    "com.twitter.android": {
+      "version": "12.34.0-prod.01",
+      "version_code": 312340001,
+      "arch": "arm64-v8a"
+    }
+  },
+  "inputs": [
+    {
+      "file": "original-instagram-439-arm64.apkm",
+      "bytes": 128757263,
+      "sha256": "1f20e342cc878225c141c83125ea46773ee8ea9491b8bd0469907de496097c0e"
+    },
+    {
+      "file": "base.apk",
+      "bytes": 131841628,
+      "sha256": "9a5cc97a8b4c1b804f37310d7f75bbb2eae2dea72066426d92d4b242f98d5961"
+    },
+    {
+      "file": "com.twitter.android_12.34.0-prod.01-312340001_1arch_2dpi_24lang_0d5e5dfcd6d1ce2f7899e98625ad1541_apkmirror.com.apkm",
+      "bytes": 78417059,
+      "sha256": "016a7eb2b6d8e2d6410da7f3c60e1bb46b002f6fedd797e366b068fb2897682b"
+    }
+  ],
+  "bundle": {
+    "file": "patches-3.10.0-custom-newx.12.mpp",
+    "bytes": 10566167,
+    "sha256": "3f0c96c863d3279f29e0a00c748af033e773c71a2bcdc8ffe2a58188fef3a82f"
+  },
+  "patch_results": [
+    {
+      "file": "instagram-combined-default.apk",
+      "bytes": 149263795,
+      "sha256": "c7e0a71260efbb44cdf0ebd7de2c16dd9ed02681220b1e4272343575ab880faf",
+      "applied_count": 60,
+      "failed": [],
+      "steps": [
+        {
+          "step": "PATCHING",
+          "success": true
+        },
+        {
+          "step": "REBUILDING",
+          "success": true
+        },
+        {
+          "step": "SIGNING",
+          "success": true
+        }
+      ]
+    },
+    {
+      "file": "x-combined-all.apk",
+      "bytes": 141071663,
+      "sha256": "a01cd0ebfec767adcd3337ee9c09764828d4a23a6b93328a4f82a3c221994c3f",
+      "applied_count": 59,
+      "failed": [],
+      "steps": [
+        {
+          "step": "PATCHING",
+          "success": true
+        },
+        {
+          "step": "REBUILDING",
+          "success": true
+        },
+        {
+          "step": "SIGNING",
+          "success": true
+        }
+      ]
+    },
+    {
+      "file": "x-combined-default.apk",
+      "bytes": 140151263,
+      "sha256": "8dd56c06da4398541f5dbc9f71efa45e5d4e4b2396ad12c6b3dfa7f598f212b0",
+      "applied_count": 53,
+      "failed": [],
+      "steps": [
+        {
+          "step": "PATCHING",
+          "success": true
+        },
+        {
+          "step": "REBUILDING",
+          "success": true
+        },
+        {
+          "step": "SIGNING",
+          "success": true
+        }
+      ]
+    }
+  ],
+  "static_checks": {
+    "instagram_default": 99,
+    "x_all": 321,
+    "x_default": "Patch/rebuild/sign verified; final static checks not repeated on this default output."
+  },
+  "pending": [
+    "Audit global refusal cooldown before native next-page dispatch: ProfileDownloader.next currently checks task/foreground/network but does not re-check the global InstagramDownloads cooldown. Also stop batch preparation promptly after pause.",
+    "Review edge cases and device trial",
+    "Update README, file guide, release notes and source feed",
+    "Publish exact tested MPP and verify release assets",
+    "Merge into main only after validation and publishing"
+  ],
+  "limits": [
+    "Profile Posts grid only; no Stories, Highlights, Tagged tab or Reels-only tab outside the grid.",
+    "No guarantee against Instagram warnings. Native pager only, serial media transfer, 30-second inter-page delay, stop after failures, respect HTTP Retry-After.",
+    "5000 pending-post cache limit requires refresh if exceeded; only saved files are resumable, not partial-byte downloads."
+  ]
+}

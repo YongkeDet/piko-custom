@@ -1,0 +1,120 @@
+{
+  "status": "Build, tests, both Instagram default patch/rebuild runs and emitted APK checks passed; device runtime untested.",
+  "source_commit": "fff1e274a6f322bc98141aab6dcfc2ec844de494",
+  "source_tree": "c23e49180e2d38567bea4557c2ce6b6a5be334ba",
+  "ci": {
+    "run": 39115428191,
+    "job": 117640146335,
+    "conclusion": "success",
+    "bundle_artifact": 12132261693,
+    "test_artifact": 12132171935
+  },
+  "tests": {
+    "instagram_extension": 6,
+    "newx_extension": 279,
+    "patches": 90,
+    "total": 375,
+    "failures": 0,
+    "skipped": 0
+  },
+  "bundle": {
+    "file": "patches-3.10.0-custom-newx.13.mpp",
+    "bytes": 10696828,
+    "sha256": "722918b02c062f7cc2f78069a05e043ef01e5f686481209d957d276a7df283ae"
+  },
+  "target": "combined",
+  "instagram_targets": [
+    {
+      "version": "451.0.0.53.80",
+      "version_code": 385713073,
+      "architecture": "arm64-v8a",
+      "input": {
+        "file": "original-instagram-451-arm64.apkm",
+        "bytes": 137408643,
+        "sha256": "3fcbb119464a935d55d42998f7c706e5469a200bdcfc86ef7d390bf32bb95fa6"
+      },
+      "base_apk": {
+        "file": "base.apk",
+        "bytes": 135927053,
+        "sha256": "9eff1efa4591d53f8d97631c67a381a26a01929e093f604b37aa69fdf443d628"
+      },
+      "patched_apk": {
+        "file": "fff-default.apk",
+        "bytes": 161216251,
+        "sha256": "1bf8f908e7080795059042c159b2de5734b6d15fe62fc1e83cfc22131f82a1e3"
+      },
+      "patches": {
+        "applied": 60,
+        "failed": [],
+        "steps": [
+          {
+            "step": "PATCHING",
+            "success": true
+          },
+          {
+            "step": "REBUILDING",
+            "success": true
+          }
+        ],
+        "signed": false
+      },
+      "static_checks": {
+        "passed": true,
+        "count": 248,
+        "report": "instagram-451-upgrade-static.json"
+      }
+    },
+    {
+      "version": "439.0.0.37.89",
+      "version_code": 384510827,
+      "architecture": "arm64-v8a",
+      "input": {
+        "file": "original-instagram-439-arm64.apkm",
+        "bytes": 128757263,
+        "sha256": "1f20e342cc878225c141c83125ea46773ee8ea9491b8bd0469907de496097c0e"
+      },
+      "base_apk": {
+        "file": "base.apk",
+        "bytes": 131841628,
+        "sha256": "9a5cc97a8b4c1b804f37310d7f75bbb2eae2dea72066426d92d4b242f98d5961"
+      },
+      "patched_apk": {
+        "file": "fff-default.apk",
+        "bytes": 149255038,
+        "sha256": "05faf66cc54eb4c220ec6c2944e30b76e99f40959f39b8ee96a32a2f6dacc9c6"
+      },
+      "patches": {
+        "applied": 60,
+        "failed": [],
+        "steps": [
+          {
+            "step": "PATCHING",
+            "success": true
+          },
+          {
+            "step": "REBUILDING",
+            "success": true
+          }
+        ],
+        "signed": false
+      },
+      "static_checks": {
+        "passed": true,
+        "count": 217,
+        "report": "instagram-439-upgrade-static.json"
+      }
+    }
+  ],
+  "native_contract_notes": "instagram-451-contract-notes.md",
+  "tools": {
+    "morphe_desktop": "1.18.1",
+    "java": "Temurin 21.0.12.1+1"
+  },
+  "limits": [
+    "Actual device login, networking, UI, downloads, pause and manual resume remain untested.",
+    "Validation uses unsigned APKs; Morphe must sign the patched app for installation.",
+    "Profile bulk download covers the posts grid only, preserving its existing pacing and refusal cooldown.",
+    "Upstream has no 451.0.0.53.80 MetaConfig ID/name mapping at validation time; its optional advanced mapping download remains unavailable.",
+    "X code is retained in the combined bundle; X APK was not repatched in this round."
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "status": "IG 451 crash cause reproduced in .13 output; .14 build, tests, default patch/rebuild and emitted APK audits passed; device relaunch pending.",
+  "source_commit": "64c3e563349a46f51f5444e17f1795caceb8caa6",
+  "source_tree": "b0c5258eee6ef71f774ab3390358458e6c92887d",
+  "ci": {
+    "run": 39131182384,
+    "job": 117686508142,
+    "conclusion": "success",
+    "bundle_artifact": 12137513594,
+    "test_artifact": 12137533403
+  },
+  "tests": {
+    "instagram_extension": 6,
+    "newx_extension": 279,
+    "patches": 92,
+    "total": 377,
+    "failures": 0,
+    "skipped": 0
+  },
+  "bundle": {
+    "file": "patches-3.10.0-custom-newx.14.mpp",
+    "bytes": 10706263,
+    "sha256": "c8b8b790540bdb1224029e79f4ae1fc9edf8c4a59e494480fa76edf22ec34fbc"
+  },
+  "target": "combined",
+  "instagram": {
+    "version": "451.0.0.53.80",
+    "version_code": 385713073,
+    "architecture": "arm64-v8a",
+    "input": {
+      "file": "original-instagram-451-arm64.apkm",
+      "bytes": 137408643,
+      "sha256": "3fcbb119464a935d55d42998f7c706e5469a200bdcfc86ef7d390bf32bb95fa6"
+    },
+    "patched_apk": {
+      "file": "64c-default.apk",
+      "bytes": 161216229,
+      "sha256": "d34a868fa1cd1d18d92ab23a5fe77f041f2f6faff9b7d022413ccf7324e460fe"
+    },
+    "applied_patches": 60,
+    "failed_patches": [],
+    "signed": false,
+    "static_checks": 254,
+    "static_report": "instagram-451-crash-fix-static.json",
+    "verifier_report": "instagram-451-crash-fix-verifier.json"
+  },
+  "original_verifier": {
+    "apk": "base.apk",
+    "classes": 209883,
+    "methods": 807462,
+    "branches": 2721789,
+    "result_instructions": 3072693,
+    "issues": [],
+    "passed": true
+  },
+  "reproduced_failure": {
+    "patch_version": "3.10.0-custom-newx.13",
+    "exception": "java.lang.VerifyError",
+    "method": "LX/04a3;->unsafeParseFromJson(LX/04s3;)Ljava/lang/Object;",
+    "invalid_branch": "0x146 -> move-result-object at 0x14b",
+    "old_output_issues": [
+      "LX/04a3;->unsafeParseFromJson(LX/04s3;)Ljava/lang/Object; @146: branch targets MOVE_RESULT_OBJECT @14b"
+    ]
+  },
+  "limits": [
+    "Only Instagram 451 was repatched for this fix, per user scope.",
+    "Actual Xiaomi Android 16 startup and app use await user verification.",
+    "No device installation, launch or control was performed.",
+    "X code remains in the combined bundle; X was not repatched.",
+    "451 advanced MetaConfig name mapping remains unavailable upstream."
+  ]
+}

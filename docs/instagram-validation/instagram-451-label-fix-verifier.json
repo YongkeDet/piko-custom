@@ -1,0 +1,9 @@
+{
+  "apk": "e00-default.apk",
+  "classes": 213659,
+  "methods": 831839,
+  "branches": 2746479,
+  "result_instructions": 3113677,
+  "issues": [],
+  "passed": true
+}

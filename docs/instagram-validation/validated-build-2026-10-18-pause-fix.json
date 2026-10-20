@@ -1,0 +1,88 @@
+{
+  "status": "Build, tests, Instagram patch/rebuild and final static checks passed. Device runtime not tested.",
+  "source_commit": "c4c0fdb5f84e8a9488d9489715ca7484d2d5caf3",
+  "source_tree": "5ebf99a4a172805d58b0c53044b25115d2e55c38",
+  "ci": {
+    "run": 39093041437,
+    "job": 117573628782,
+    "conclusion": "success",
+    "artifact_bundle": 12123895749,
+    "artifact_tests": 12123214226
+  },
+  "tests": {
+    "patches": 88,
+    "newx_extension": 279,
+    "instagram_extension": 6,
+    "total": 373,
+    "failures": 0,
+    "skipped": 0
+  },
+  "target": {
+    "package": "com.instagram.android",
+    "version": "439.0.0.37.89",
+    "version_code": 384510827,
+    "arch": "arm64-v8a"
+  },
+  "inputs": [
+    {
+      "file": "original-instagram-439-arm64.apkm",
+      "bytes": 128757263,
+      "sha256": "1f20e342cc878225c141c83125ea46773ee8ea9491b8bd0469907de496097c0e"
+    },
+    {
+      "file": "base.apk",
+      "bytes": 131841628,
+      "sha256": "9a5cc97a8b4c1b804f37310d7f75bbb2eae2dea72066426d92d4b242f98d5961"
+    }
+  ],
+  "bundle": {
+    "file": "patches-3.10.0-custom-newx.12.mpp",
+    "bytes": 10566850,
+    "sha256": "5b46b54d12bb853bb3ee376046ce09ae5192b606a731e145ca70e6bd681b405c"
+  },
+  "patch_result": {
+    "file": "instagram-default.apk",
+    "bytes": 149258742,
+    "sha256": "f3fa557ca98d87099a35eecb678c33696e1a9bc4685a5862f82d655337b15f6a",
+    "selection": "default",
+    "applied_count": 60,
+    "failed": [],
+    "steps": [
+      {
+        "step": "PATCHING",
+        "success": true
+      },
+      {
+        "step": "REBUILDING",
+        "success": true
+      }
+    ],
+    "signed": false
+  },
+  "static_checks": {
+    "instagram_default": 109,
+    "passed": true,
+    "report": "instagram-static-pause-fix.json"
+  },
+  "tools": {
+    "morphe_desktop": "1.18.1",
+    "java": "Temurin 21.0.12.1+1"
+  },
+  "commands": [
+    "./gradlew --no-daemon --max-workers=2 -PpikoBundleTarget=combined clean :extensions:instagram:test :extensions:newx:test buildAndroid :patches:build :patches:lintNewxResolvers :patches:checkExtensionDescriptors",
+    "./patch-instagram.sh original-instagram-439-arm64.apkm --unsigned",
+    "java -cp morphe-cli.jar:validation-classes InstagramDownloadStaticReview instagram-default.apk base.apk instagram-static.json REPOSITORY"
+  ],
+  "fixes": [
+    "Recheck shared refusal cooldown immediately before delayed native pagination.",
+    "Stop queued/media/history preparation after pause, releasing the serial worker.",
+    "Reject late progress updates after task termination on the main thread."
+  ],
+  "limits": [
+    "Actual device networking, UI, foreground/background behavior and manual resume remain untested.",
+    "Posts grid only; excludes Stories, Highlights, Tagged and Reels outside the grid.",
+    "Media HTTP supports longer parseable Retry-After; native paging exposes status only and applies at least 15 minutes.",
+    "No guarantee of avoiding platform warnings; original authentication and challenge flows remain.",
+    "X was not repatched in this round, per user scope. The combined bundle retains its existing code."
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "source_sha": "5464a22338ce0be0e1a414610d25f59757b28d0b",
+  "bundle": "patches-3.10.0-custom-newx.19.mpp",
+  "target": "combined",
+  "sha256": "14562d0968886fe782eb0bbe29041f36442f7069d35f07878016e59d01397b92",
+  "build_run_id": 39228405518,
+  "build_artifact_id": 12176311405,
+  "test_artifact_id": 12176816112,
+  "hevc_experiment_removed": true,
+  "highest_resolution_preserved": true,
+  "instagram_code_unchanged_from": "e00bbba9b36c139a21fc87b5461fa75ad336ffa2",
+  "patches": [
+    {
+      "target": "X12.35",
+      "version": "12.35.0-prod.01",
+      "applied": 59,
+      "failed": 0,
+      "rebuilt": true,
+      "apk_sha256": "8627fe2cfd8ee715d266b361d7cd61f5d321817a7bd9c850d6c3b1fba76d62cf",
+      "static_checks": 220,
+      "verifier": {
+        "apk": "5464a22338ce-1235-all.apk",
+        "classes": 123359,
+        "methods": 594029,
+        "branches": 1517010,
+        "result_instructions": 1496093,
+        "issues": [],
+        "passed": true
+      }
+    },
+    {
+      "target": "IG451",
+      "version": "451.0.0.53.80",
+      "applied": 60,
+      "failed": 0,
+      "rebuilt": true,
+      "apk_sha256": "8d69a3c07b2367987a75f3fa42c411c2bd4a07ff1b58a6f15c767f0eb6c568a4",
+      "static_checks": 706,
+      "verifier": {
+        "apk": "5464a22338ce-ig451-default.apk",
+        "classes": 213659,
+        "methods": 831839,
+        "branches": 2746479,
+        "result_instructions": 3113677,
+        "issues": [],
+        "passed": true
+      }
+    }
+  ],
+  "checks": {
+    "patch_tests": 98,
+    "newx_extension_tests": 279,
+    "instagram_extension_tests": 6,
+    "instagram_extension_count_evidence": "Unchanged six @Test fixtures; :extensions:instagram:test completed successfully in CI. Its HTML was not included in this workflow artifact.",
+    "failures": 0,
+    "chinese_resource_bindings": 443,
+    "resolver_lint": "passed",
+    "extension_descriptors": "passed"
+  },
+  "device_tested": false
+}

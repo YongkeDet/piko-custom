@@ -1,0 +1,9 @@
+{
+  "apk": "64c-default.apk",
+  "classes": 213655,
+  "methods": 831824,
+  "branches": 2746435,
+  "result_instructions": 3113626,
+  "issues": [],
+  "passed": true
+}

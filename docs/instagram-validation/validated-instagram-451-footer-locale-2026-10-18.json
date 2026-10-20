@@ -1,0 +1,54 @@
+{
+  "status": "Build, tests, default patch/rebuild and final APK audits passed; actual footer layout, language switching and first-launch exit require device verification.",
+  "source_commit": "c4f0a79e71b1037a2fbc1ffed0dc88581b89045b",
+  "source_tree": "8f9a746540a7a101a8d8047e78941fbb97d3c557",
+  "ci": {
+    "run": 39134979309,
+    "job": 117697544045,
+    "conclusion": "success",
+    "bundle_artifact": 12139097841,
+    "test_artifact": 12138823781
+  },
+  "tests": {
+    "instagram_extension": 6,
+    "newx_extension": 279,
+    "patches": 92,
+    "total": 377,
+    "failures": 0,
+    "skipped": 0
+  },
+  "bundle": {
+    "file": "patches-3.10.0-custom-newx.15.mpp",
+    "bytes": 10729542,
+    "sha256": "8b2c69904550c3fd25b5ef38f6402d6951d70ead43983c7d5904642386dbe278"
+  },
+  "target": "combined",
+  "instagram": {
+    "version": "451.0.0.53.80",
+    "version_code": 385713073,
+    "architecture": "arm64-v8a",
+    "applied_patches": 60,
+    "failed_patches": [],
+    "signed": false,
+    "static_checks": 706,
+    "static_report": "instagram-451-footer-locale-static.json",
+    "verifier_report": "instagram-451-footer-locale-verifier.json"
+  },
+  "changes": [
+    "Native footer download component appended immediately before bookmark/save; current row media, session, context and carousel index are resolved directly.",
+    "87 missing Simplified Chinese entries supplied; all 443 Instagram string keys now covered; current configured activity context is used without unwrapping/caching its locale.",
+    "Instagram crash reports use MediaStore Downloads on Android 29+, preserve a private pending report and retry publication at the next startup."
+  ],
+  "language_exit_investigation": {
+    "new_crash_report_found": false,
+    "local_report_found": "Only the previously diagnosed .13 VerifyError report was found in Downloads/Localsend.",
+    "cause": "Unknown; cannot distinguish an app language restart from a crash without a new report or device runtime evidence.",
+    "confirmed_fix": false
+  },
+  "limits": [
+    "Only Instagram 451 was patched; 439 and X were not repatched.",
+    "No device installation, launch or control was performed.",
+    "Static audits cannot prove the on-device visual order or language-switch startup behavior.",
+    ".14 story-filter VerifyError fix remains in place."
+  ]
+}
