@@ -1,0 +1,64 @@
+name: Import verified source snapshot
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/import-source.yml', '.github/migration-import.json']
+permissions:
+  contents: write
+jobs:
+  import:
+    if: github.repository == 'YongkeDet/piko-custom'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Import the frozen source and migration changes
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path, PurePosixPath
+          import hashlib, json, os, subprocess
+          root=Path.cwd()
+          assert os.environ['GITHUB_REPOSITORY']=='YongkeDet/piko-custom'
+          assert os.environ['GITHUB_REF']=='refs/heads/main'
+          payload=json.loads((root/'.github/migration-import.json').read_text())
+          assert payload['source_repository']=='YongkeDet/piko'
+          assert payload['target_repository']=='YongkeDet/piko-custom'
+          assert payload['source_sha']=='7e97531ace2d1d8079aa4fc17a95cdb17f03eb89'
+          assert payload['source_tree']=='4fb38f2e2046f0589fd89da8b59e0e5e3e93c99b'
+          bootstrap_path=root/'.github/workflows/import-source.yml'
+          bootstrap=bootstrap_path.read_bytes()
+          def git(*args):
+              return subprocess.check_output(['git',*args],text=True).strip()
+          assert git('rev-parse','HEAD')==os.environ['GITHUB_SHA']
+          subprocess.run(['git','fetch','--no-tags','--depth=1',
+              'https://github.com/YongkeDet/piko.git',payload['source_sha']],check=True)
+          assert git('rev-parse',payload['source_sha']+'^{tree}')==payload['source_tree']
+          subprocess.run(['git','read-tree','--reset','-u',payload['source_sha']],check=True)
+          for p in (root/'.github/workflows').iterdir():
+              assert p.is_file(),str(p)
+              p.unlink()
+          bootstrap_path.write_bytes(bootstrap)
+          allowed={'README.md','gradle.properties','patches-bundle.json','patches/build.gradle.kts',
+          'extensions/newx/src/main/java/app/morphe/extension/newx/settings/ChangelogAction.java',
+          '.github/scripts/bundle_metadata.py','.github/scripts/publish_bundle.py',
+          'MIGRATION.md','MORPHE-NOTICE','RELEASE_NOTES.md'}
+          assert {f['path'] for f in payload['files']}==allowed
+          for entry in payload['files']:
+              name=PurePosixPath(entry['path'])
+              assert not name.is_absolute() and '..' not in name.parts and '.git' not in name.parts
+              data=entry['content'].encode('utf-8')
+              assert hashlib.sha256(data).hexdigest()==entry['sha256']
+              target=root.joinpath(*name.parts)
+              target.parent.mkdir(parents=True,exist_ok=True)
+              target.write_bytes(data)
+          for name in ('LICENSE','NOTICE'):
+              original=subprocess.check_output(['git','show',payload['source_sha']+':'+name])
+              assert (root/name).read_bytes()==original,name
+          subprocess.run(['git','add','-A'],check=True)
+          assert not git('diff','--cached','--name-only','--','.github/workflows'), 'Bootstrap must not modify workflows via GITHUB_TOKEN'
+          subprocess.run(['git','config','user.name','github-actions[bot]'],check=True)
+          subprocess.run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'],check=True)
+          subprocess.run(['git','commit','-m','Import .19 source snapshot and prepare independent .20 build [skip ci]'],check=True)
+          subprocess.run(['git','push','origin','HEAD:main'],check=True)
+          print('IMPORT_RESULT='+json.dumps({'sha':git('rev-parse','HEAD'),'tree':git('rev-parse','HEAD^{tree}'),
+              'source_sha':payload['source_sha'],'source_license_preserved':True}),flush=True)
+          PY
