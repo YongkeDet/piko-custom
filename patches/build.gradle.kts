@@ -23,6 +23,9 @@ patches {
 // Legacy Twitter patches rely on settings_root.xml, removed in NewX. Keep them out of
 // every published bundle. Instagram can be validated separately before a combined release.
 tasks.withType<Jar>().configureEach {
+    from(rootProject.files("LICENSE", "NOTICE", "MORPHE-NOTICE")) {
+        into("licenses/piko-custom")
+    }
     exclude("app/crimera/patches/twitter/**", "app/revanced/patches/**", "extensions/twitter.mpe")
     if (bundleTarget == "newx") {
         exclude("app/crimera/patches/instagram/**", "extensions/instagram.mpe")

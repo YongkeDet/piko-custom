@@ -19,6 +19,8 @@ with zipfile.ZipFile(bundle) as archive:
     names = set(archive.namelist())
     assert {"classes.dex", "extensions/newx.mpe", "extensions/instagram.mpe"} <= names
     assert "extensions/twitter.mpe" not in names
+    for notice in ("LICENSE", "NOTICE", "MORPHE-NOTICE"):
+        assert archive.read("licenses/piko-custom/" + notice) == (root / notice).read_bytes()
 digest = hashlib.sha256(bundle.read_bytes()).hexdigest()
 feed = json.loads((root / "patches-bundle.json").read_text())
 assert feed["version"] == version
